@@ -35,8 +35,6 @@ const login = async ({ email, password }) => {
         // if (!isEqual) {
         //     throw new Error('Invalid email or password')
         // }
-        console.log(email, password);
-        console.log(process.env);
 
         const user = {
             id: process.env.userId,
