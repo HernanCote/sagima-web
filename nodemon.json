@@ -1,0 +1,9 @@
+{
+    "env": {
+        "MONGO_URI": "mongodb+srv://santiadmin:melapela34@cluster0-wkbh7.mongodb.net/test?retryWrites=true&w=majority",
+        "SECRET": "SUPERSECRET",
+        "userId": "234353",
+        "userEmail": "hernan.cote@outlook.com",
+        "userPassword": "melapela3"
+    }
+}
