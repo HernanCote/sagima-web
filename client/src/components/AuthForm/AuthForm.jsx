@@ -3,7 +3,12 @@ import React, { useState } from 'react';
 import { FormActions } from './StyledComponents';
 import { Button } from '../Foundation';
 
-import { FormRoot, FormItem, Input, Label } from '../Form';
+import {
+	FormRoot, //
+	FormItem,
+	Input,
+	Label,
+} from '../Form';
 
 const AuthForm = ({
 	className, //

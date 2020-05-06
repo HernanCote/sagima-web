@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import AuthContext from '../../context/auth-context';
 
-import { H1 } from '../../components/Foundation';
 import AuthForm from '../../components/AuthForm';
 
 const Section = styled.section`
@@ -49,8 +48,6 @@ const AuthIndex = () => {
 				},
 			});
 
-			console.log(response);
-
 			if (response.status !== 200 && response.status !== 201) {
 				throw new Error('Failed');
 			}
@@ -68,7 +65,6 @@ const AuthIndex = () => {
 	};
 	return (
 		<Section>
-			<H1>Iniciar Sesión</H1>
 			<AuthForm onSubmitHandler={submitHandler} />
 		</Section>
 	);
