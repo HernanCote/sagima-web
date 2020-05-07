@@ -3,16 +3,7 @@ import sagimaLogo from '../../static/sagima/sagima.png';
 
 import AuthContext from '../../context/auth-context';
 
-import {
-	Root,
-	Logo,
-	DesktopNavItems,
-	ItemsList,
-	ListItem,
-	NavLink,
-	NavButton,
-	Bottom,
-} from './StyledComponents';
+import { Root, Logo, DesktopNavItems, ItemsList, ListItem, NavLink, NavButton, Bottom } from './StyledComponents';
 
 const Navbar = ({
 	className, //
@@ -28,33 +19,33 @@ const Navbar = ({
 					<ItemsList>
 						<ListItem>
 							<NavLink title="inicio" to="/home">
-								Inicio
+								INICIO
 							</NavLink>
 						</ListItem>
 						<ListItem>
 							<NavLink title="nosotros" to="/about">
-								Nosotros
+								NOSOTROS
 							</NavLink>
 						</ListItem>
 						<ListItem>
 							<NavLink title="alidos" to="/allies">
-								Aliados
+								ALIADOS
 							</NavLink>
 						</ListItem>
 						<ListItem>
 							<NavLink title="portafolio" to="/portfolio">
-								Portafolio
+								PORTAFOLIO
 							</NavLink>
 						</ListItem>
 						<ListItem>
 							<NavLink title="contacto" to="/contact">
-								Contacto
+								CONTACTO
 							</NavLink>
 						</ListItem>
 						{!token && (
 							<ListItem>
 								<NavLink title="iniciar sesión" to="/auth">
-									Iniciar Sesión
+									INICIAR SESIÓN
 								</NavLink>
 							</ListItem>
 						)}
@@ -62,11 +53,11 @@ const Navbar = ({
 							<>
 								<ListItem>
 									<NavLink title="proyectos" to="/projects">
-										Proyectos
+										PROYECTOS
 									</NavLink>
 								</ListItem>
 								<ListItem>
-									<NavButton onClick={logout}>Cerrar Sesión</NavButton>
+									<NavButton onClick={logout}>CERRAR SESSIÓN</NavButton>
 								</ListItem>
 							</>
 						)}

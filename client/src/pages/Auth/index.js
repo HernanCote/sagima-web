@@ -20,7 +20,9 @@ const Section = styled.section`
 	justify-content: center;
 `;
 
-const AuthIndex = () => {
+const AuthIndex = ({
+	className, //
+}) => {
 	const contextType = useContext(AuthContext);
 
 	const submitHandler = async ({ email, password }) => {
@@ -70,7 +72,7 @@ const AuthIndex = () => {
 		}
 	};
 	return (
-		<AuthRoot>
+		<AuthRoot className={className}>
 			<Section>
 				<AuthForm onSubmitHandler={submitHandler} />
 			</Section>

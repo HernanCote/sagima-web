@@ -11,9 +11,11 @@ const HomeRoot = styled.div`
 	height: calc(100vh - (${theme.heights.breakLine} + ${theme.heights.footer} + ${theme.heights.navbar}));
 `;
 
-const Home = ({ className }) => (
-	<HomeRoot>
-		<EmptyState className={className} />
+const Home = ({
+	className, //
+}) => (
+	<HomeRoot className={className}>
+		<EmptyState />
 		<Footer />
 	</HomeRoot>
 );

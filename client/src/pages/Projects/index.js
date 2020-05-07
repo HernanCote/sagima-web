@@ -22,9 +22,11 @@ const Content = styled.div`
 	width: 40%;
 `;
 
-const Projects = ({ className }) => (
-	<PortfolioRoot>
-		<Content className={className}>
+const Projects = ({
+	className, //
+}) => (
+	<PortfolioRoot className={className}>
+		<Content>
 			<H1>Proyectos - ASI</H1>
 			<ProjectList projects={projectListMock} />
 		</Content>
