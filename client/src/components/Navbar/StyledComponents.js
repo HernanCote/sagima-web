@@ -1,13 +1,14 @@
 import styled, { css } from 'styled-components';
 import { NavLink as BaseNavLink } from 'react-router-dom';
 
+import { getMediaMinWidth } from '../../utils';
 import theme from '../../theme';
 
 const Root = styled.header`
 	left: 0;
 	top: 0;
 	width: 100%;
-	height: 6rem;
+	height: ${theme.heights.navbar};
 	background: ${theme.colors.white};
 	padding: 0 2rem;
 	display: flex;
@@ -16,7 +17,7 @@ const Root = styled.header`
 
 const Bottom = styled.div`
 	width: 100%;
-	height: 1.5rem;
+	height: ${theme.heights.breakLine};
 	background-image: linear-gradient(
 		to right,
 		${theme.colors.sagimaYellow},
@@ -74,6 +75,14 @@ const NavButton = styled.button`
 	${commonStyles}
 `;
 
+const DesktopNavItems = styled(NavItems)`
+	display: none;
+
+	${getMediaMinWidth('md')} {
+		display: block;
+	}
+`;
+
 export {
 	Root,
 	Logo,
@@ -83,4 +92,5 @@ export {
 	NavLink,
 	NavButton,
 	Bottom,
+	DesktopNavItems,
 };

@@ -71,6 +71,7 @@ const theme = {
 			grid: '1rem',
 		},
 		maxWidth: `${maxWidthInPx / 16}rem`,
+		commonSpacing: '4rem',
 	},
 	colors: {
 		white: '#FFFFFF',
@@ -87,8 +88,17 @@ const theme = {
 		sagimaYellow: '#f8bc04',
 		sagimaOrange: '#da7b0e',
 		sagimaRed: '#69302d',
-		sagimaDark: '#3c3c3b',
-		sagimaDarkGrey: '#9d9d9c',
+		sagimaDarkGray: '#3c3c3b',
+		sagimaLightGrey: '#9d9d9c',
+	},
+	grid: {
+		itemsPadding: '1.25rem',
+		itemWidth: '25.5rem',
+	},
+	heights: {
+		footer: '10rem',
+		navbar: '6rem',
+		breakLine: '1.5rem',
 	},
 };
 

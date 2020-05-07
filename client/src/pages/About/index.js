@@ -6,16 +6,24 @@ import SagimaAbout from '../../static/images/sagima-about.png';
 
 import HeroImage from '../../components/HeroImage';
 import LineSection from '../../components/LineSection';
+import Grid from '../../components/Grid';
+import Footer from '../../components/Footer';
 import { P } from '../../components/Foundation';
 
 import { getMediaMinWidth } from '../../utils';
+import theme from '../../theme';
 
+import imageMappings from './imageMappings';
+
+const AboutRoot = styled.div`
+	background-color: ${theme.colors.white};
+`;
 const Section = styled.section`
 	display: block;
 	align-items: center;
 	width: 80%;
-	margin: 5rem auto;
-	padding: 5rem 0;
+	margin: ${theme.spacing.commonSpacing} auto;
+	padding: ${theme.spacing.commonSpacing} 0;
 	margin-bottom: 0;
 
 	p {
@@ -28,22 +36,91 @@ const Section = styled.section`
 	}
 `;
 
-const Image = styled.img`
-	height: 17rem;
+const ImageLogo = styled.img`
+	height: auto;
 	width: 100%;
-	margin: 5rem auto;
+	margin: ${theme.spacing.commonSpacing} auto;
 
 	${getMediaMinWidth('sm')} {
-		height: 30rem;
 	}
 
 	${getMediaMinWidth('md')} {
-		height: 37rem;
+	}
+`;
+const ImageText = styled(P)`
+	width: 9.75rem;
+	text-align: center;
+`;
+
+const GridContent = styled.section`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 70%;
+	padding: ${theme.spacing.commonSpacing} 0;
+	margin: 0 auto;
+
+	${ImageText}:nth-child(odd) {
+		color: ${theme.colors.sagimaLightBlue};
+	}
+
+	${ImageText}:nth-child(even) {
+		color: ${theme.colors.sagimaDarkBlue};
 	}
 `;
 
+const GridDesktop = styled(Grid)`
+	display: none;
+	width: 100%;
+
+	${getMediaMinWidth('md')} {
+		display: flex;
+	}
+`;
+
+const GridTablet = styled(Grid)`
+	display: none;
+	width: 100%;
+
+	${getMediaMinWidth('sm')} {
+		display: flex;
+	}
+
+	${getMediaMinWidth('md')} {
+		display: none;
+	}
+`;
+
+const GridMobile = styled(Grid)`
+	display: block;
+	width: 100%;
+
+	${getMediaMinWidth('sm')} {
+		display: none;
+	}
+`;
+
+const GridImage = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+`;
+
+const ImageSource = styled.img`
+	width: 10rem;
+`;
+
+const gridContent = () =>
+	imageMappings.map(img => (
+		<GridImage>
+			<ImageSource src={img.image} alt={img.name}></ImageSource>
+			<ImageText>{img.name}</ImageText>
+		</GridImage>
+	));
+
 const About = ({ className }) => (
-	<React.Fragment className={className}>
+	<AboutRoot className={className}>
 		<HeroImage image={ImageHero} bottomText="¿QUIÉNES SOMOS?" />
 		<Section>
 			<P>
@@ -56,10 +133,22 @@ const About = ({ className }) => (
 				eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
 				zzril delenit augue duis dolore te feugait nulla facilisi.
 			</P>
-			<Image src={SagimaAbout} />
+			<ImageLogo src={SagimaAbout} />
 		</Section>
 		<LineSection text="¿POR QUÉ ELEGIR NUESTROS SERVICIOS?" />
-	</React.Fragment>
+		<GridContent>
+			<GridDesktop itemsPerRow={3} fullHeight fullWidth>
+				{gridContent()}
+			</GridDesktop>
+			<GridTablet itemsPerRow={2} fullHeight fullWidth>
+				{gridContent()}
+			</GridTablet>
+			<GridMobile itemsPerRow={1} fullWidth fullHeight>
+				{gridContent()}
+			</GridMobile>
+		</GridContent>
+		<Footer />
+	</AboutRoot>
 );
 
 export default About;

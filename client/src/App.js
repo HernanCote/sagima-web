@@ -3,8 +3,6 @@ import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-import theme from './theme';
-
 import Navbar from './components/Navbar';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -16,7 +14,9 @@ import Projects from './pages/Projects';
 
 import AuthContext from './context/auth-context';
 
-const AppMain = styled.main``;
+const AppMain = styled.main`
+	position: relative;
+`;
 const AppRoot = styled.div`
 	max-width: 1680px;
 	margin: 0 auto;

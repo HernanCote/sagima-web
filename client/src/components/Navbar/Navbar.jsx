@@ -6,7 +6,7 @@ import AuthContext from '../../context/auth-context';
 import {
 	Root,
 	Logo,
-	NavItems,
+	DesktopNavItems,
 	ItemsList,
 	ListItem,
 	NavLink,
@@ -14,7 +14,9 @@ import {
 	Bottom,
 } from './StyledComponents';
 
-const Navbar = ({ className }) => {
+const Navbar = ({
+	className, //
+}) => {
 	const { token, logout } = useContext(AuthContext);
 	return (
 		<>
@@ -22,32 +24,46 @@ const Navbar = ({ className }) => {
 				<Logo>
 					<img src={sagimaLogo} alt="logo" />
 				</Logo>
-				<NavItems>
+				<DesktopNavItems>
 					<ItemsList>
 						<ListItem>
-							<NavLink to="/home">Inicio</NavLink>
+							<NavLink title="inicio" to="/home">
+								Inicio
+							</NavLink>
 						</ListItem>
 						<ListItem>
-							<NavLink to="/about">Nosotros</NavLink>
+							<NavLink title="nosotros" to="/about">
+								Nosotros
+							</NavLink>
 						</ListItem>
 						<ListItem>
-							<NavLink to="/allies">Aliados</NavLink>
+							<NavLink title="alidos" to="/allies">
+								Aliados
+							</NavLink>
 						</ListItem>
 						<ListItem>
-							<NavLink to="/portfolio">Portafolio</NavLink>
+							<NavLink title="portafolio" to="/portfolio">
+								Portafolio
+							</NavLink>
 						</ListItem>
 						<ListItem>
-							<NavLink to="/contact">Contacto</NavLink>
+							<NavLink title="contacto" to="/contact">
+								Contacto
+							</NavLink>
 						</ListItem>
 						{!token && (
 							<ListItem>
-								<NavLink to="/auth">Iniciar Sesión</NavLink>
+								<NavLink title="iniciar sesión" to="/auth">
+									Iniciar Sesión
+								</NavLink>
 							</ListItem>
 						)}
 						{token && (
 							<>
 								<ListItem>
-									<NavLink to="/projects">Proyectos</NavLink>
+									<NavLink title="proyectos" to="/projects">
+										Proyectos
+									</NavLink>
 								</ListItem>
 								<ListItem>
 									<NavButton onClick={logout}>Cerrar Sesión</NavButton>
@@ -55,7 +71,7 @@ const Navbar = ({ className }) => {
 							</>
 						)}
 					</ItemsList>
-				</NavItems>
+				</DesktopNavItems>
 			</Root>
 			<Bottom />
 		</>

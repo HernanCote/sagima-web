@@ -4,9 +4,16 @@ import styled from 'styled-components';
 import AuthContext from '../../context/auth-context';
 
 import AuthForm from '../../components/AuthForm';
+import theme from '../../theme';
+
+const AuthRoot = styled.div`
+	background-color: ${theme.colors.white};
+	height: calc(100vh - (${theme.heights.breakLine} + ${theme.heights.navbar}));
+`;
 
 const Section = styled.section`
-	height: calc(100vh - 5rem);
+	background-color: ${theme.colors.white};
+	padding-top: 10rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -38,8 +45,7 @@ const AuthIndex = () => {
 		};
 
 		try {
-			const url =
-				process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8080';
+			const url = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8080';
 			const response = await fetch(`${url}/graphql`, {
 				method: 'POST',
 				body: JSON.stringify(requestBody),
@@ -64,9 +70,11 @@ const AuthIndex = () => {
 		}
 	};
 	return (
-		<Section>
-			<AuthForm onSubmitHandler={submitHandler} />
-		</Section>
+		<AuthRoot>
+			<Section>
+				<AuthForm onSubmitHandler={submitHandler} />
+			</Section>
+		</AuthRoot>
 	);
 };
 
