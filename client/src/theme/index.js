@@ -96,7 +96,7 @@ const theme = {
 		itemWidth: '25.5rem',
 	},
 	heights: {
-		footer: '10rem',
+		footer: '12rem',
 		navbar: '6rem',
 		breakLine: '1.5rem',
 	},

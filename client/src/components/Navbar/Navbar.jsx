@@ -9,6 +9,7 @@ const Navbar = ({
 	className, //
 }) => {
 	const { token, logout } = useContext(AuthContext);
+	const showFeature = process.env.SHOW_ALL;
 	return (
 		<>
 			<Root className={className}>
@@ -22,26 +23,30 @@ const Navbar = ({
 								INICIO
 							</NavLink>
 						</ListItem>
-						<ListItem>
-							<NavLink title="nosotros" to="/about">
-								NOSOTROS
-							</NavLink>
-						</ListItem>
-						<ListItem>
-							<NavLink title="alidos" to="/allies">
-								ALIADOS
-							</NavLink>
-						</ListItem>
-						<ListItem>
-							<NavLink title="portafolio" to="/portfolio">
-								PORTAFOLIO
-							</NavLink>
-						</ListItem>
-						<ListItem>
-							<NavLink title="contacto" to="/contact">
-								CONTACTO
-							</NavLink>
-						</ListItem>
+						{showFeature && (
+							<>
+								<ListItem>
+									<NavLink title="nosotros" to="/about">
+										NOSOTROS
+									</NavLink>
+								</ListItem>
+								<ListItem>
+									<NavLink title="alidos" to="/allies">
+										ALIADOS
+									</NavLink>
+								</ListItem>
+								<ListItem>
+									<NavLink title="portafolio" to="/portfolio">
+										PORTAFOLIO
+									</NavLink>
+								</ListItem>
+								<ListItem>
+									<NavLink title="contacto" to="/contact">
+										CONTACTO
+									</NavLink>
+								</ListItem>
+							</>
+						)}
 						{!token && (
 							<ListItem>
 								<NavLink title="iniciar sesión" to="/auth">
