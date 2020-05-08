@@ -9,7 +9,7 @@ const Navbar = ({
 	className, //
 }) => {
 	const { token, logout } = useContext(AuthContext);
-	const showFeature = process.env.SHOW_ALL;
+	const showFeature = process.env.NODE_ENV !== 'production';
 	return (
 		<>
 			<Root className={className}>
