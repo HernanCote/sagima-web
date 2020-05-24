@@ -159,7 +159,7 @@ const Footer = ({
 				<FooterSection>
 					<QuickLinks>
 						<LinkItem>
-							<Link to="/us">NOSOTROS</Link>
+							<Link to="/about">NOSOTROS</Link>
 						</LinkItem>
 						<LinkItem>
 							<Link to="/allies">ALIADOS</Link>

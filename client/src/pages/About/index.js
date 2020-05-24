@@ -6,7 +6,7 @@ import SagimaAbout from '../../static/images/sagima-about.png';
 
 import HeroImage from '../../components/HeroImage';
 import LineSection from '../../components/LineSection';
-import Grid from '../../components/Grid';
+import BaseGridContent from '../../components/GridContent';
 import Footer from '../../components/Footer';
 import { P } from '../../components/Foundation';
 
@@ -40,25 +40,13 @@ const ImageLogo = styled.img`
 	height: auto;
 	width: 100%;
 	margin: ${theme.spacing.commonSpacing} auto;
-
-	${getMediaMinWidth('sm')} {
-	}
-
-	${getMediaMinWidth('md')} {
-	}
 `;
 const ImageText = styled(P)`
 	width: 9.75rem;
 	text-align: center;
 `;
 
-const GridContent = styled.section`
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	max-width: 70%;
-	padding: ${theme.spacing.commonSpacing} 0;
-	margin: 0 auto;
+const GridContent = styled(BaseGridContent)`
 
 	${ImageText}:nth-child(odd) {
 		color: ${theme.colors.sagimaLightBlue};
@@ -66,37 +54,6 @@ const GridContent = styled.section`
 
 	${ImageText}:nth-child(even) {
 		color: ${theme.colors.sagimaDarkBlue};
-	}
-`;
-
-const GridDesktop = styled(Grid)`
-	display: none;
-	width: 100%;
-
-	${getMediaMinWidth('md')} {
-		display: flex;
-	}
-`;
-
-const GridTablet = styled(Grid)`
-	display: none;
-	width: 100%;
-
-	${getMediaMinWidth('sm')} {
-		display: flex;
-	}
-
-	${getMediaMinWidth('md')} {
-		display: none;
-	}
-`;
-
-const GridMobile = styled(Grid)`
-	display: block;
-	width: 100%;
-
-	${getMediaMinWidth('sm')} {
-		display: none;
 	}
 `;
 
@@ -122,32 +79,27 @@ const gridContent = () =>
 const About = ({
 	className, //
 }) => (
-	<AboutRoot className={className}>
-		<HeroImage image={ImageHero} bottomText="¿QUIÉNES SOMOS?" />
-		<Section>
-			<P>
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-				dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-				suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
-				vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et
-				iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+		<AboutRoot className={className}>
+			<HeroImage image={ImageHero} bottomText="¿QUIÉNES SOMOS?" />
+			<Section>
+				<P>
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+					dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+					suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
+					vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et
+					iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
 			</P>
-			<ImageLogo src={SagimaAbout} />
-		</Section>
-		<LineSection text="¿POR QUÉ ELEGIR NUESTROS SERVICIOS?" />
-		<GridContent>
-			<GridDesktop itemsPerRow={3} fullHeight fullWidth>
-				{gridContent()}
-			</GridDesktop>
-			<GridTablet itemsPerRow={2} fullHeight fullWidth>
-				{gridContent()}
-			</GridTablet>
-			<GridMobile itemsPerRow={1} fullWidth fullHeight>
-				{gridContent()}
-			</GridMobile>
-		</GridContent>
-		<Footer />
-	</AboutRoot>
-);
+				<ImageLogo src={SagimaAbout} />
+			</Section>
+			<LineSection text="¿POR QUÉ ELEGIR NUESTROS SERVICIOS?" />
+			<GridContent
+				itemsDesktop={3}
+				itemsTablet={2}
+				itemsMobile={1}
+				gridContent={gridContent}
+			/>
+			<Footer />
+		</AboutRoot>
+	);
 
 export default About;
