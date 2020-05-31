@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import ImageHero from '../../static/images/BaseHero.jpg';
+import NhazcaLogo from '../../static/images/allies/Logo-nhazca.png';
 
 import HeroImage from '../../components/HeroImage';
 import BaseGridContent from '../../components/GridContent';
@@ -17,6 +18,10 @@ const AlliesRoot = styled.div`
 	background-color: ${theme.colors.white};
 `;
 
+const DescriptionImage = styled.img`
+	width: auto;
+`;
+
 const Section = styled.section`
 	display: block;
 	align-items: center;
@@ -24,6 +29,14 @@ const Section = styled.section`
 	margin: ${theme.spacing.commonSpacing} auto;
 	padding: ${theme.spacing.commonSpacing} 0;
 	margin-bottom: 0;
+
+	${DescriptionImage} {
+		margin: 4rem 0q;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+	}
 
 	p {
 		text-align: center;
@@ -58,8 +71,8 @@ const GridImage = styled.div`
 `;
 
 const ImageSource = styled.img`
-	width: 80%;
 	height: 10rem;
+	width: 80%;
 `;
 
 const gridContent = () =>
@@ -71,26 +84,33 @@ const gridContent = () =>
 	));
 
 
-const Allies = ({ className }) => (
-	<AlliesRoot className={className}>
-		<HeroImage image={ImageHero} bottomText="ALIADOS" />
-		<Section>
-			<P>
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-				dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-				suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
-				vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et
-				iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+const Allies = ({
+	className,
+}) => (
+		<AlliesRoot className={className}>
+			<HeroImage image={ImageHero} bottomText="ALIADOS" />
+			<Section>
+				<P>
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+					dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+					suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
+					vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et
+					iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
 			</P>
-		</Section>
-		<GridContent
-			itemsDesktop={3}
-			itemsTablet={2}
-			itemsMobile={1}
-			gridContent={gridContent}
-		/>
-		<Footer />
-	</AlliesRoot>
-);
+				<DescriptionImage src={NhazcaLogo} alt="Nhazca"></DescriptionImage>
+				<P>
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+					dolore magna aliquam erat volutpat aliquam erat volutpat aliquam erat volutpat
+			</P>
+			</Section>
+			<GridContent
+				itemsDesktop={3}
+				itemsTablet={2}
+				itemsMobile={1}
+				gridContent={gridContent}
+			/>
+			<Footer />
+		</AlliesRoot>
+	);
 
 export default Allies;

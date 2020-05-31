@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import ImageHero from '../../static/images/BaseHero.jpg';
 import SagimaAbout from '../../static/images/sagima-about.png';
 
+
 import HeroImage from '../../components/HeroImage';
 import LineSection from '../../components/LineSection';
 import BaseGridContent from '../../components/GridContent';

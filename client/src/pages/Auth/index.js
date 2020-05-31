@@ -5,7 +5,6 @@ import AuthContext from '../../context/auth-context';
 
 import AuthForm from '../../components/AuthForm';
 import theme from '../../theme';
-import Footer from '../../components/Footer';
 
 const AuthRoot = styled.div`
 	background-color: ${theme.colors.white};

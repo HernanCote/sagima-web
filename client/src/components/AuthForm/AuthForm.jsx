@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { FormActions } from './StyledComponents';
 import { Button } from '../Foundation';

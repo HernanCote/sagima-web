@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import theme from '../../theme';
-import { getResponsiveStyle, toCSSURL, getMediaMinWidth } from '../../utils';
 
-import { H2 } from '../Foundation';
+import BaseSlider from '../Slider';
+
+import { getMediaMinWidth } from '../../utils';
 
 const HeroRoot = styled.div`
 	width: 100%;
@@ -18,12 +19,8 @@ const HeroRoot = styled.div`
 	}
 `;
 
-const Image = styled.div`
-	background-position: 50% 0%;
+const Slider = styled(BaseSlider)`
 	height: 100%;
-	background-size: cover;
-	background-repeat: no-repeat;
-	${getResponsiveStyle('image', 'background-image', toCSSURL)};
 	margin-bottom: 5rem;
 `;
 
@@ -40,6 +37,6 @@ const BottomLine = styled.div`
 
 export {
 	HeroRoot, //
-	Image,
+	Slider,
 	BottomLine,
 };
