@@ -70,7 +70,7 @@ const SliderContent = styled.div`
     height: 100%;
     display: flex;
     ${({ translate }) => `transform: translateX(-${translate}px)`};
-    ${({ transition }) => `transition: transform ease-out ${transition}s`};
+    ${({ transition }) => `transition: transform cubic-bezier(.04,.33,.93,.68) ${transition}s`};
     ${({ width }) => `width: ${width}px`};
 `;
 
