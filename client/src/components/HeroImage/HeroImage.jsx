@@ -31,7 +31,7 @@ const HeroImage = ({
 	bottomText,
 }) => (
 		<HeroRoot classImage={className}>
-			<Slider slides={images} />
+			<Slider slides={images} autoPlay={4} />
 			<BottomLine />
 			<LineSection text={bottomText} />
 		</HeroRoot>

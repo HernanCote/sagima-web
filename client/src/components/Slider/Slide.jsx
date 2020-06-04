@@ -6,9 +6,11 @@ import {
 
 const Slide = ({
     className,
-    content
+    content,
+    width,
 }) => (
         <SlideRoot
+            width={width}
             className={className}
             content={content}
         ></SlideRoot>

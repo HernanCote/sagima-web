@@ -4,14 +4,14 @@ import { FormActions } from './StyledComponents';
 import { Button } from '../Foundation';
 
 import {
-	FormRoot, //
+	FormRoot,
 	FormItem,
 	Input,
 	Label,
 } from '../Form';
 
 const AuthForm = ({
-	className, //
+	className,
 	onSubmitHandler,
 }) => {
 	const emailEl = React.createRef();

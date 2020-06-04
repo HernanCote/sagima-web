@@ -51,7 +51,7 @@ const Dot = styled.span`
 `;
 
 const SlideRoot = styled.div`
-    width: 100%;
+    width: ${({ width }) => width}px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -70,7 +70,7 @@ const SliderContent = styled.div`
     height: 100%;
     display: flex;
     ${({ translate }) => `transform: translateX(-${translate}px)`};
-    ${({ transition }) => `transition: transform ease-in-out ${transition}s`};
+    ${({ transition }) => `transition: transform ease-out ${transition}s`};
     ${({ width }) => `width: ${width}px`};
 `;
 

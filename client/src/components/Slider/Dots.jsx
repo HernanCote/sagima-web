@@ -12,8 +12,9 @@ const Dot = ({ active }) => (
 const Dots = ({
     slides,
     activeIndex,
+    className,
 }) => (
-        <DotsRoot>
+        <DotsRoot className={className}>
             {slides.map((slide, i) => (
                 <Dot key={slide} active={activeIndex === i} />
             ))}
