@@ -7,8 +7,7 @@ import Navbar from './components/Navbar';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Allies from './pages/Allies';
-import Home from './pages/Home';
-import Portfolio from './pages/Services';
+import Services from './pages/Services';
 import AuthIndex from './pages/Auth';
 import Projects from './pages/Projects';
 
@@ -48,7 +47,7 @@ function App() {
 							<Route path="/home" component={About} />
 							<Route path="/contact" component={Contact} />
 							<Route path="/allies" component={Allies} />
-							<Route path="/services" component={Portfolio} />
+							<Route path="/services" component={Services} />
 							{!token && <Route path="/auth" component={AuthIndex} />}
 							{token && <Route path="/projects" component={Projects} />}
 							{!token && <Redirect to="/auth" />}
