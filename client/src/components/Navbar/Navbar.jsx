@@ -26,18 +26,13 @@ const Navbar = ({
 						{showFeature && (
 							<>
 								<ListItem>
-									<NavLink title="nosotros" to="/about">
-										NOSOTROS
+									<NavLink title="services" to="/services">
+										SERVICIOS
 									</NavLink>
 								</ListItem>
 								<ListItem>
 									<NavLink title="alidos" to="/allies">
 										ALIADOS
-									</NavLink>
-								</ListItem>
-								<ListItem>
-									<NavLink title="portafolio" to="/portfolio">
-										PORTAFOLIO
 									</NavLink>
 								</ListItem>
 								<ListItem>

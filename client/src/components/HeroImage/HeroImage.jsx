@@ -29,11 +29,13 @@ const images = [
 const HeroImage = ({
 	className,
 	bottomText,
+	topText
 }) => (
 		<HeroRoot classImage={className}>
+			{topText && <LineSection text={topText} />}
 			<Slider slides={images} autoPlay={4} />
 			<BottomLine />
-			<LineSection text={bottomText} />
+			{bottomText && <LineSection text={bottomText} />}
 		</HeroRoot>
 	);
 

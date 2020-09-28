@@ -6,16 +6,16 @@ import Footer from '../../components/Footer';
 import theme from '../../theme';
 import styled from 'styled-components';
 
-const PortfolioRoot = styled.div`
+const ServicesRoot = styled.div`
 	background-color: ${theme.colors.white};
 `;
-const Portfolio = ({
-	className, //
+const Services = ({
+	className,
 }) => (
-	<PortfolioRoot className={className}>
-		<EmptyState />
-		<Footer />
-	</PortfolioRoot>
-);
+		<ServicesRoot className={className}>
+			<EmptyState />
+			<Footer />
+		</ServicesRoot>
+	);
 
-export default Portfolio;
+export default Services;

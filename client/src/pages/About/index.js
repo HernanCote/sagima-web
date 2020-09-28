@@ -9,7 +9,7 @@ import HeroImage from '../../components/HeroImage';
 import LineSection from '../../components/LineSection';
 import BaseGridContent from '../../components/GridContent';
 import Footer from '../../components/Footer';
-import { P } from '../../components/Foundation';
+import { P, Spaciator, Button } from '../../components/Foundation';
 
 import { getMediaMinWidth } from '../../utils';
 import theme from '../../theme';
@@ -35,6 +35,13 @@ const Section = styled.section`
 	${getMediaMinWidth('sm')} {
 		width: 60%;
 	}
+`;
+
+const BottomSection = styled.section`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 4rem;
 `;
 
 const ImageLogo = styled.img`
@@ -83,15 +90,24 @@ const About = ({
 		<AboutRoot className={className}>
 			<HeroImage image={ImageHero} bottomText="¿QUIÉNES SOMOS?" />
 			<Section>
+				<P>Somos la vanguardia de la ingeniería y la mecatrónica al servicio de sus necesidades</P>
+				<Spaciator />
 				<P>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-					dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-					suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
-					vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et
-					iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-			</P>
+					Nuestra misión es compañarlos en todas las áreas que requieren tecnología de avanzada aplicada a sus procesos y servicios.
+					Como aliados estratégicos estamos en capacidad de diseñar, optimizar, modernizar, instalar y desarrollar sus recursos.
+				</P>
+				<Spaciator />
+				<P>
+					Una empresa joven como las tecnologías que aplicamos, con expertos en mecatrónica, informática,
+					electrónica, sistemas y telecomunicaciones con preparación y experiencia en varios países del mundo.
+				</P>
+				<Spaciator />
+				<P>
+					Sagima llega a Colombia para innovar, renovar su tecnología y disminuir sus costos.
+				</P>
 				<ImageLogo src={SagimaAbout} />
 			</Section>
+			<HeroImage image={ImageHero} topText="¿QUÉ HACEMOS?" />
 			<LineSection text="¿POR QUÉ ELEGIR NUESTROS SERVICIOS?" />
 			<GridContent
 				itemsDesktop={3}
@@ -99,6 +115,11 @@ const About = ({
 				itemsMobile={1}
 				gridContent={gridContent}
 			/>
+			<BottomSection>
+				<Button withShadow blackText bold big>
+					CONTÁCTANOS
+				</Button>
+			</BottomSection>
 			<Footer />
 		</AboutRoot>
 	);

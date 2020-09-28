@@ -77,6 +77,10 @@ const figCaption = css`
 	opacity: 0.5;
 `;
 
+const Spaciator = styled.div`
+	height: 0.25rem;
+`;
+
 export {
 	H1,
 	H2,
@@ -94,4 +98,5 @@ export {
 	small,
 	Text,
 	figCaption,
+	Spaciator
 };

@@ -8,7 +8,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Allies from './pages/Allies';
 import Home from './pages/Home';
-import Portfolio from './pages/Portfolio';
+import Portfolio from './pages/Services';
 import AuthIndex from './pages/Auth';
 import Projects from './pages/Projects';
 
@@ -45,11 +45,10 @@ function App() {
 						<Switch>
 							<Redirect from="/" to="/home" exact />
 							{token && <Redirect from="/auth" to="/home" exact />}
-							<Route path="/home" component={Home} />
-							<Route path="/about" component={About} />
+							<Route path="/home" component={About} />
 							<Route path="/contact" component={Contact} />
 							<Route path="/allies" component={Allies} />
-							<Route path="/portfolio" component={Portfolio} />
+							<Route path="/services" component={Portfolio} />
 							{!token && <Route path="/auth" component={AuthIndex} />}
 							{token && <Route path="/projects" component={Projects} />}
 							{!token && <Redirect to="/auth" />}
