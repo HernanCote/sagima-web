@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import ImageHero from '../../static/images/BaseHero.jpg';
 import NhazcaLogo from '../../static/images/allies/Logo-nhazca.png';
 
-import HeroImage from '../../components/HeroImage';
 import BaseGridContent from '../../components/GridContent';
 import Footer from '../../components/Footer';
 import { P } from '../../components/Foundation';
@@ -13,6 +11,15 @@ import alliesMapping from './alliesMapping';
 
 import { getMediaMinWidth } from '../../utils';
 import theme from '../../theme';
+
+import HeroImage from '../../components/HeroImage';
+
+import ImageHero from '../../static/images/BaseHero.jpg';
+
+
+const images = [
+	ImageHero,
+];
 
 const AlliesRoot = styled.div`
 	background-color: ${theme.colors.white};
@@ -88,7 +95,7 @@ const Allies = ({
 	className,
 }) => (
 		<AlliesRoot className={className}>
-			<HeroImage image={ImageHero} bottomText="ALIADOS" />
+			<HeroImage images={images} bottomText="ALIADOS" />
 			<Section>
 				<P>
 					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
@@ -96,12 +103,12 @@ const Allies = ({
 					suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
 					vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et
 					iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-			</P>
+				</P>
 				<DescriptionImage src={NhazcaLogo} alt="Nhazca"></DescriptionImage>
 				<P>
 					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
 					dolore magna aliquam erat volutpat aliquam erat volutpat aliquam erat volutpat
-			</P>
+				</P>
 			</Section>
 			<GridContent
 				itemsDesktop={3}

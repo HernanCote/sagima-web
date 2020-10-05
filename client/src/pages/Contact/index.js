@@ -10,6 +10,7 @@ import { P } from '../../components/Foundation';
 import { getMediaMinWidth } from '../../utils';
 import theme from '../../theme';
 
+
 const ContactRoot = styled.div`
 	background-color: ${theme.colors.white};
 `;
@@ -32,11 +33,15 @@ const Section = styled.section`
 	}
 `;
 
+const images = [
+	ImageHero,
+];
+
 const Contact = ({
 	className,
 }) => (
 		<ContactRoot className={className}>
-			<HeroImage image={ImageHero} bottomText="CONTACTO" />
+			<HeroImage images={images} bottomText="CONTACTO" />
 			<Section>
 				<P>
 					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
@@ -44,7 +49,7 @@ const Contact = ({
 					suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
 					vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et
 					iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-			</P>
+				</P>
 			</Section>
 			<Footer />
 		</ContactRoot>

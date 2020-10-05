@@ -1,9 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import ImageHero from '../../static/images/BaseHero.jpg';
 import SagimaAbout from '../../static/images/sagima-about.png';
 
+import ImageHero from '../../static/images/BaseHero.jpg';
+
+import carousel1 from '../../static/images/carousel/carousel1.jpg';
+import carousel2 from '../../static/images/carousel/carousel2.jpg';
+import carousel3 from '../../static/images/carousel/carousel3.jpg';
+import carousel4 from '../../static/images/carousel/carousel4.jpg';
+import carousel5 from '../../static/images/carousel/carousel5.jpg';
+import carousel6 from '../../static/images/carousel/carousel6.jpg';
+import carousel7 from '../../static/images/carousel/carousel7.jpg';
 
 import HeroImage from '../../components/HeroImage';
 import LineSection from '../../components/LineSection';
@@ -84,11 +92,25 @@ const gridContent = () =>
 		</GridImage>
 	));
 
+const images = [
+	carousel1,
+	carousel2,
+	carousel3,
+	carousel4,
+	carousel5,
+	carousel6,
+	carousel7,
+];
+
+const topBannerImage = [
+	ImageHero,
+];
+
 const About = ({
 	className, //
 }) => (
 		<AboutRoot className={className}>
-			<HeroImage image={ImageHero} bottomText="¿QUIÉNES SOMOS?" />
+			<HeroImage images={topBannerImage} bottomText="¿QUIÉNES SOMOS?" />
 			<Section>
 				<P>Somos la vanguardia de la ingeniería y la mecatrónica al servicio de sus necesidades</P>
 				<Spaciator />
@@ -107,7 +129,7 @@ const About = ({
 				</P>
 				<ImageLogo src={SagimaAbout} />
 			</Section>
-			<HeroImage image={ImageHero} topText="¿QUÉ HACEMOS?" />
+			<HeroImage images={images} topText="¿QUÉ HACEMOS?" />
 			<LineSection text="¿POR QUÉ ELEGIR NUESTROS SERVICIOS?" />
 			<GridContent
 				itemsDesktop={3}
@@ -116,7 +138,12 @@ const About = ({
 				gridContent={gridContent}
 			/>
 			<BottomSection>
-				<Button withShadow blackText bold big>
+				<Button
+					withShadow
+					blackText
+					bold
+					big
+				>
 					CONTÁCTANOS
 				</Button>
 			</BottomSection>
@@ -125,3 +152,8 @@ const About = ({
 	);
 
 export default About;
+
+export {
+	BottomSection,
+	Section,
+};

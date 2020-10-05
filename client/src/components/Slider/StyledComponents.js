@@ -61,6 +61,7 @@ const SlideRoot = styled.div`
 const SliderRoot = styled.div`
     position: relative;
     height: 100vh;
+    width: 100%;
     margin: 0 auto;
     overflow: hidden;
 `;

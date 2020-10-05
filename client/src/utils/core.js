@@ -4,4 +4,11 @@ const identity = val => val;
 
 const isObject = obj => obj === Object(obj);
 
-export { isNumber, identity, isObject };
+const uniq = arr => arr.reduce((acc, name) => (acc.includes(name) ? acc : [...acc, name]), []);
+
+export {
+    isNumber,
+    identity,
+    isObject,
+    uniq
+};
