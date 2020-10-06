@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import HeroImage from '../../components/HeroImage';
 import Footer from '../../components/Footer';
@@ -32,18 +32,30 @@ const ServicesSection = styled.section`
 
 const GridContent = styled(BaseGridContent)``;
 
-const gridContent = () =>
-	servicesMapping.map(img => (
-		<InformationCard
-			image={img.image}
-			text={img.text}
-			description={img.description}
-		/>
-	));
-
 const Services = ({
 	className,
-}) => (
+}) => {
+
+	const [cardIndexToShow, setCardIndexToShow] = useState(-1);
+
+	const showOverlayClickHandler = (index) => {
+		setCardIndexToShow(index);
+	}
+
+	const gridContent = () =>
+		servicesMapping.map((img, idx) => (
+			<InformationCard
+				key={idx}
+				index={idx}
+				image={img.image}
+				text={img.text}
+				description={img.description}
+				showOverlay={idx === cardIndexToShow}
+				showOverlayClickHandler={showOverlayClickHandler}
+			/>
+		));
+
+	return (
 		<ServicesRoot className={className}>
 			<HeroImage images={topBannerImage} bottomText="¿QUÉ OFRECEMOS?" />
 			<Section>
@@ -80,6 +92,7 @@ const Services = ({
 			</BottomSection>
 			<Footer />
 		</ServicesRoot>
-	);
+	)
+};
 
 export default Services;

@@ -7,6 +7,7 @@ const Root = styled.div`
     position: relative;
     padding: 1rem 0;
     text-align: center;
+    overflow: hidden;
 `;
 
 const Image = styled.img`
@@ -34,9 +35,24 @@ const PlusButton = styled.img`
     cursor: pointer;
 `;
 
+const Overlay = styled.div`
+    display: block;
+    top: ${({ showOverlay }) => showOverlay ? 0 : '15rem'} ;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.75);
+    padding: 0 2rem;
+    position: absolute;
+    left: 0;
+    color: white;
+    font-size: 0.75rem;
+    transition: all 0.25s ease-in-out;
+`;
+
 export {
     Root,
     Image,
     InfoText,
     PlusButton,
+    Overlay,
 };

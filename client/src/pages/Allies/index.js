@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import NhazcaLogo from '../../static/images/allies/Logo-nhazca.png';
+import NhazcaLogo from '../../static/images/allies/nhazca.png';
 
 import BaseGridContent from '../../components/GridContent';
 import Footer from '../../components/Footer';
@@ -26,7 +26,8 @@ const AlliesRoot = styled.div`
 `;
 
 const DescriptionImage = styled.img`
-	width: auto;
+	width: 10rem;
+	height: 10rem;
 `;
 
 const Section = styled.section`
@@ -42,7 +43,6 @@ const Section = styled.section`
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
-		width: 50%;
 	}
 
 	p {
@@ -78,8 +78,8 @@ const GridImage = styled.div`
 `;
 
 const ImageSource = styled.img`
-	height: 10rem;
-	width: 80%;
+	height: 9rem;
+	width: 70%;
 `;
 
 const gridContent = () =>
@@ -98,16 +98,14 @@ const Allies = ({
 			<HeroImage images={images} bottomText="ALIADOS" />
 			<Section>
 				<P>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-					dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-					suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
-					vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et
-					iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+					NHAZCA (Natural HAZards Control and Assessment), empresa spin-off de la
+					Universidad “Sapienza” de Roma, es líder internacional en el análisis y seguimiento de
+					amenazas naturales y grandes infraestructuras para la gestión y mitigación de riesgos.
 				</P>
+				<P>Somos la empresa aliada de Nhazca en américa latina</P>
 				<DescriptionImage src={NhazcaLogo} alt="Nhazca"></DescriptionImage>
 				<P>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-					dolore magna aliquam erat volutpat aliquam erat volutpat aliquam erat volutpat
+					Algunos de los clientes de NHAZCA, nuestra empresa aliada, son:
 				</P>
 			</Section>
 			<GridContent

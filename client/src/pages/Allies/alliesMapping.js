@@ -1,49 +1,49 @@
-import RomaCapitale from '../../static/images/allies/logo-roma-capitale.png';
-import Anas from '../../static/images/allies/logo-anas.png';
-import Sapienza from '../../static/images/allies/logo-ceri-sapienza.jpg';
-import FriuliVenezia from '../../static/images/allies/logo-friuli-venezia.png';
-import Italferr from '../../static/images/allies/logo-italferr.png';
-import Img from '../../static/images/allies/logo-img.png';
-import Metro from '../../static/images/allies/logo-metro.jpg';
-import RegioneLazio from '../../static/images/allies/logo-regione-lazio.png';
-import RegioneVeneto from '../../static/images/allies/logo-regione-veneto.jpg';
+import Roma from '../../static/images/allies/roma.png';
+import Anas from '../../static/images/allies/anas.png';
+import Astaldi from '../../static/images/allies/astaldi.png';
+import Terna from '../../static/images/allies/terna.png';
+import Golder from '../../static/images/allies/golder.png';
+import WeBuild from '../../static/images/allies/webuild.png';
+import Metro from '../../static/images/allies/metro.png';
+import Acea from '../../static/images/allies/acea.png';
+import Enea from '../../static/images/allies/enea.png';
 
 
 const mappings = [
     {
         name: 'Comune di Roma',
-        image: RomaCapitale,
+        image: Roma,
     },
     {
         name: 'Anas S.p.a',
         image: Anas,
     },
     {
-        name: 'CERI - Samienza Universidad de Roma',
-        image: Sapienza,
+        name: 'Astaldi S.p.A',
+        image: Astaldi,
     },
     {
-        name: 'Regione Autonoma Friuli Venezia Giulia',
-        image: FriuliVenezia,
+        name: 'Terna',
+        image: Terna,
     },
     {
-        name: 'Italferr S.p.A',
-        image: Italferr,
+        name: 'Golder Associates',
+        image: Golder,
     },
     {
-        name: 'img S.r.l',
-        image: Img,
+        name: 'Webuild S.p.A',
+        image: WeBuild,
     }, {
         name: 'Metro C S.p.A',
         image: Metro,
     },
     {
-        name: 'Regione Lazio',
-        image: RegioneLazio,
+        name: 'Acea S.p.A',
+        image: Acea,
     },
     {
-        name: 'Regione Veneto',
-        image: RegioneVeneto,
+        name: 'RAgenzia nazionale per le nuove tecnologie, l´energia e lo sviluppo economico sostenibile ENEA',
+        image: Enea,
     },
 ];
 
