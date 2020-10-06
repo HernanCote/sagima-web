@@ -30,6 +30,7 @@ const InfoText = styled.p`
 `;
 
 const PlusButton = styled.img`
+    position: relative;
     width: 1.5rem;
     height: 1.5rem;
     cursor: pointer;

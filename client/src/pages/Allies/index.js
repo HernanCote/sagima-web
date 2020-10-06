@@ -61,7 +61,6 @@ const ImageText = styled(P)`
 `;
 
 const GridContent = styled(BaseGridContent)`
-
 	${ImageText} {
 		width: 100%;
 		padding-top: 0.5rem;
@@ -70,22 +69,36 @@ const GridContent = styled(BaseGridContent)`
 	}
 `;
 
-const GridImage = styled.div`
+const ImageContainer = styled.div`
+	height: 6.5rem;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 `;
 
+const GridImage = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+`;
+
 const ImageSource = styled.img`
-	height: 9rem;
-	width: 70%;
+	height: ${({ height }) => height || '9rem'};
+	width: ${({ width }) => width || '70%'};
 `;
 
 const gridContent = () =>
 	alliesMapping.map(img => (
 		<GridImage>
-			<ImageSource src={img.image} alt={img.name}></ImageSource>
+			<ImageContainer>
+				<ImageSource
+					src={img.image}
+					alt={img.name}
+					height={img.height}
+					width={img.width}
+				/>
+			</ImageContainer>
 			<ImageText>{img.name}</ImageText>
 		</GridImage>
 	));
