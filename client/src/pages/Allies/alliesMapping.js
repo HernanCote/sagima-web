@@ -19,11 +19,13 @@ const mappings = [
     {
         name: 'Anas S.p.A',
         image: Anas,
+        height: '7rem',
+        width: '12rem',
     },
     {
         name: 'Astaldi S.p.A',
         image: Astaldi,
-        height: '5rem',
+        height: '4.5rem',
         width: '17rem',
     },
     {
@@ -35,8 +37,8 @@ const mappings = [
     {
         name: 'Golder Associates',
         image: Golder,
-        height: '4.5rem',
-        width: '17rem'
+        height: '4rem',
+        width: '15.5rem'
     },
     {
         name: 'Webuild S.p.A',
@@ -46,18 +48,20 @@ const mappings = [
     }, {
         name: 'Metro C S.p.A',
         image: Metro,
+        height: '9rem',
+        width: '12rem',
     },
     {
         name: 'Acea S.p.A',
         image: Acea,
-        height: '5rem',
-        width: '17rem'
+        height: '2.75rem',
+        width: '10rem'
     },
     {
         name: 'RAgenzia nazionale per le nuove tecnologie, l´energia e lo sviluppo economico sostenibile ENEA',
         image: Enea,
-        height: '5rem',
-        width: '17rem'
+        height: '2.75rem',
+        width: '10rem'
     },
 ];
 

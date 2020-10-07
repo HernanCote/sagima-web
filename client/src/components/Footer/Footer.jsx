@@ -7,7 +7,7 @@ import { P, Button } from '../Foundation';
 import { getMediaMinWidth } from '../../utils';
 import theme from '../../theme';
 
-import SagimaLogo from '../../static/sagima/sagima.png';
+import SagimaLogo from '../../static/images/sagima/sagima-yellow-white.png';
 import LinkedinLogo from '../../static/images/social/linkedin.png';
 
 const FooterRoot = styled.footer`
@@ -79,15 +79,15 @@ const FooterSection = styled.div`
 		margin: 0;
 		flex: 1;
 		${({ alignLeft, alignCenter }) =>
-			alignLeft &&
-			!alignCenter &&
-			css`
+		alignLeft &&
+		!alignCenter &&
+		css`
 				align-items: flex-start;
 			`}
 		${({ alignLeft, alignCenter }) =>
-			!alignLeft &&
-			alignCenter &&
-			css`
+		!alignLeft &&
+		alignCenter &&
+		css`
 				align-items: center;
 			`}
 	}
@@ -140,44 +140,44 @@ const Link = styled(NavLink)`
 const Footer = ({
 	className, //
 }) => (
-	<FooterRoot className={className}>
-		<FooterTop />
-		<FooterOverlay>
-			<FooterContent>
-				<FooterSection alignLeft>
-					<SagimaImageLogo src={SagimaLogo} alt="sagima logo" />
-					<P className="info">Dirección | Teléfono | Email</P>
-				</FooterSection>
-				<FooterSection alignCenter>
-					<Button withShadow blackText>
-						CONTÁCTANOS
+		<FooterRoot className={className}>
+			<FooterTop />
+			<FooterOverlay>
+				<FooterContent>
+					<FooterSection alignLeft>
+						<SagimaImageLogo src={SagimaLogo} alt="sagima logo" />
+						<P className="info">Dirección | Teléfono | Email</P>
+					</FooterSection>
+					<FooterSection alignCenter>
+						<Button withShadow blackText>
+							CONTÁCTANOS
 					</Button>
-					<P>O visita nuestras redes sociales</P>
-					<SocialNetworkIcon src={LinkedinLogo} alt="Linkedin Sagima" />
-					<P>SAGIMA</P>
-				</FooterSection>
-				<FooterSection>
-					<QuickLinks>
-						<LinkItem>
-							<Link to="/about">NOSOTROS</Link>
-						</LinkItem>
-						<LinkItem>
-							<Link to="/allies">ALIADOS</Link>
-						</LinkItem>
-						<LinkItem>
-							<Link to="/portfolio">PORTAFOLIO</Link>
-						</LinkItem>
-						<LinkItem>
-							<Link to="/faq">PREGUNTAS FRECUENTES</Link>
-						</LinkItem>
-					</QuickLinks>
-				</FooterSection>
-			</FooterContent>
-			<FooterBottom>
-				<P>&copy; {new Date().getFullYear()} | DISEÑO Sistemarte | SITIO WEB Hernán Cote</P>
-			</FooterBottom>
-		</FooterOverlay>
-	</FooterRoot>
-);
+						<P>O visita nuestras redes sociales</P>
+						<SocialNetworkIcon src={LinkedinLogo} alt="Linkedin Sagima" />
+						<P>SAGIMA</P>
+					</FooterSection>
+					<FooterSection>
+						<QuickLinks>
+							<LinkItem>
+								<Link to="/about">NOSOTROS</Link>
+							</LinkItem>
+							<LinkItem>
+								<Link to="/allies">ALIADOS</Link>
+							</LinkItem>
+							<LinkItem>
+								<Link to="/portfolio">PORTAFOLIO</Link>
+							</LinkItem>
+							<LinkItem>
+								<Link to="/faq">PREGUNTAS FRECUENTES</Link>
+							</LinkItem>
+						</QuickLinks>
+					</FooterSection>
+				</FooterContent>
+				<FooterBottom>
+					<P>&copy; {new Date().getFullYear()} | DISEÑO Sistemarte | SITIO WEB Hernán Cote</P>
+				</FooterBottom>
+			</FooterOverlay>
+		</FooterRoot>
+	);
 
 export default Footer;

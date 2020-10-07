@@ -34,12 +34,12 @@ const Section = styled.section`
 	display: block;
 	align-items: center;
 	width: 80%;
-	margin: ${theme.spacing.commonSpacing} auto;
+	margin: ${theme.spacing.commonSpacing} auto 0;
 	padding: ${theme.spacing.commonSpacing} 0;
 	margin-bottom: 0;
 
 	${DescriptionImage} {
-		margin: 4rem 0q;
+		margin: 4rem 0;
 		display: block;
 		margin-left: auto;
 		margin-right: auto;

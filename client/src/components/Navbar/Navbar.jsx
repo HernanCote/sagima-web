@@ -1,14 +1,49 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useRef, useEffect } from 'react';
 import sagimaLogo from '../../static/sagima/sagima.png';
 
 import AuthContext from '../../context/auth-context';
 
-import { Root, Logo, DesktopNavItems, ItemsList, ListItem, NavLink, NavButton, Bottom } from './StyledComponents';
+
+
+import {
+	Root,
+	Logo,
+	DesktopNavItems,
+	ItemsList,
+	ListItem,
+	NavLink,
+	NavButton,
+	Bottom,
+	MobileNavItems,
+	Line,
+	HamburgerMenu,
+	MobileMenu,
+	MobileNavLink,
+} from './StyledComponents';
 
 const Navbar = ({
 	className, //
 }) => {
 	const { token, logout } = useContext(AuthContext);
+	const [open, setOpen] = useState(false);
+	const node = useRef();
+
+	const handleClick = e => {
+		if (node.current.contains(e.target)) {
+			return;
+		}
+		setOpen(false);
+	};
+
+	useEffect(() => {
+		// add when mounted
+		document.addEventListener("mousedown", handleClick);
+		// return function to be called when unmounted
+		return () => {
+			document.removeEventListener("mousedown", handleClick);
+		};
+	}, []);
+
 	return (
 		<>
 			<Root className={className}>
@@ -18,28 +53,28 @@ const Navbar = ({
 				<DesktopNavItems>
 					<ItemsList>
 						<ListItem>
-							<NavLink title="inicio" to="/home">
+							<NavLink title="home" to="/home">
 								INICIO
 							</NavLink>
 						</ListItem>
 						<ListItem>
 							<NavLink title="services" to="/services">
 								SERVICIOS
-									</NavLink>
+							</NavLink>
 						</ListItem>
 						<ListItem>
-							<NavLink title="alidos" to="/allies">
+							<NavLink title="allies" to="/allies">
 								ALIADOS
-									</NavLink>
+							</NavLink>
 						</ListItem>
 						<ListItem>
-							<NavLink title="contacto" to="/contact">
+							<NavLink title="contact" to="/contact">
 								CONTACTO
-									</NavLink>
+							</NavLink>
 						</ListItem>
 						{!token && (
 							<ListItem>
-								<NavLink title="iniciar sesión" to="/auth">
+								<NavLink title="login" to="/auth">
 									INICIAR SESIÓN
 								</NavLink>
 							</ListItem>
@@ -47,7 +82,7 @@ const Navbar = ({
 						{token && (
 							<>
 								<ListItem>
-									<NavLink title="proyectos" to="/projects">
+									<NavLink title="projects" to="/projects">
 										PROYECTOS
 									</NavLink>
 								</ListItem>
@@ -58,6 +93,20 @@ const Navbar = ({
 						)}
 					</ItemsList>
 				</DesktopNavItems>
+				<MobileNavItems ref={node}>
+					<HamburgerMenu open={open} onClick={() => setOpen(!open)}>
+						<Line />
+						<Line />
+						<Line />
+					</HamburgerMenu >
+					<MobileMenu open={open}>
+						<MobileNavLink title="home" to="/home">INICIO</MobileNavLink>
+						<MobileNavLink title="services" to="/services">SERVICIOS</MobileNavLink>
+						<MobileNavLink title="allies" to="/allies">ALIADOS</MobileNavLink>
+						<MobileNavLink title="contact" to="/contact">CONTACTO</MobileNavLink>
+					</MobileMenu>
+				</MobileNavItems>
+
 			</Root>
 			<Bottom />
 		</>

@@ -5,7 +5,10 @@ import ImageHero from '../../static/images/BaseHero.jpg';
 
 import HeroImage from '../../components/HeroImage';
 import Footer from '../../components/Footer';
+
 import { P } from '../../components/Foundation';
+
+import SagimaLogo from '../../static/images/sagima/sagima-yellow-white.png';
 
 import { getMediaMinWidth } from '../../utils';
 import theme from '../../theme';
@@ -37,19 +40,86 @@ const images = [
 	ImageHero,
 ];
 
+const FormRoot = styled.div`
+	display: flex;
+	flex-direction: column;
+	height: 30rem;
+	width: 100%;
+	
+	${getMediaMinWidth('sm')} {
+		flex-direction: row;
+	}
+`;
+
+const FormInformation = styled.div`
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-content: space-between;
+	align-items: center;
+	justify-content: space-between;
+	height: 100%;
+	width: 100%;
+	padding: 6rem 0;
+	background-color: ${theme.colors.sagimaDarkGray};
+	
+	> ${P} {
+		padding: 0 4rem;
+	}
+	
+	${P} {
+		color: ${theme.colors.sagimaLightGrey};
+	}
+`;
+
+const ContactInformation = styled.div`
+	position: absolute;
+	bottom: 1.5rem;
+	right: 1.5rem;
+
+	${P} {
+		font-size: 0.75rem;
+		text-align: end;
+		margin: 0rem;
+	}
+`;
+
+const FormLogo = styled.img`
+	width: 10rem;
+`;
+
+const Form = styled.div`
+	height: 100%;
+	width: 100%;
+`;
+
 const Contact = ({
 	className,
 }) => (
 		<ContactRoot className={className}>
 			<HeroImage images={images} bottomText="CONTACTO" />
 			<Section>
-				<P>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-					dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-					suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
-					vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et
-					iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-				</P>
+				<FormRoot>
+					<FormInformation>
+						<FormLogo src={SagimaLogo} />
+						<P>
+							En SAGIMA estamos para
+							servirte, por eso responderemos
+							a tu solicitud con la mayor
+							brevedad.
+						</P>
+						<P>
+							Gracias por contactarnos
+						</P>
+						<ContactInformation>
+							<P>contacto@sagima.com.co</P>
+							<P>Bogotá, Colombia</P>
+						</ContactInformation>
+					</FormInformation>
+					<Form>
+
+					</Form>
+				</FormRoot>
 			</Section>
 			<Footer />
 		</ContactRoot>
