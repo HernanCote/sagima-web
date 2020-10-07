@@ -14,11 +14,11 @@ import theme from '../../theme';
 
 import HeroImage from '../../components/HeroImage';
 
-import ImageHero from '../../static/images/BaseHero.jpg';
+import ImageHero2 from '../../static/images/BaseHero2.jpg';
 
 
 const images = [
-	ImageHero,
+	ImageHero2,
 ];
 
 const AlliesRoot = styled.div`

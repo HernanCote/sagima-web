@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 import SagimaAbout from '../../static/images/sagima-about.png';
 
-import ImageHero from '../../static/images/BaseHero.jpg';
+
+import ImageHero2 from '../../static/images/BaseHero2.jpg';
 
 import carousel1 from '../../static/images/carousel/carousel1.jpg';
 import carousel2 from '../../static/images/carousel/carousel2.jpg';
@@ -103,7 +104,7 @@ const images = [
 ];
 
 const topBannerImage = [
-	ImageHero,
+	ImageHero2,
 ];
 
 const About = ({
