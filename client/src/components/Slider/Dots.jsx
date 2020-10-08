@@ -16,7 +16,7 @@ const Dots = ({
 }) => (
         <DotsRoot className={className}>
             {slides.map((slide, i) => (
-                <Dot key={slide} active={activeIndex === i} />
+                <Dot key={i} active={activeIndex === i} />
             ))}
         </DotsRoot>
     );

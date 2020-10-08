@@ -90,6 +90,7 @@ const theme = {
 		sagimaRed: '#69302d',
 		sagimaDarkGray: '#3c3c3b',
 		sagimaLightGrey: '#9d9d9c',
+		sagimaLighterGrey: '#e7e7e7',
 	},
 	grid: {
 		itemsPadding: '1.25rem',

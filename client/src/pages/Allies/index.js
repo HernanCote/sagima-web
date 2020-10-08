@@ -89,8 +89,8 @@ const ImageSource = styled.img`
 `;
 
 const gridContent = () =>
-	alliesMapping.map(img => (
-		<GridImage>
+	alliesMapping.map((img, idx) => (
+		<GridImage key={idx}>
 			<ImageContainer>
 				<ImageSource
 					src={img.image}

@@ -24,6 +24,7 @@ import { getMediaMinWidth } from '../../utils';
 import theme from '../../theme';
 
 import imageMappings from './imageMappings';
+import { Link } from 'react-router-dom';
 
 const AboutRoot = styled.div`
 	background-color: ${theme.colors.white};
@@ -86,8 +87,8 @@ const ImageSource = styled.img`
 `;
 
 const gridContent = () =>
-	imageMappings.map(img => (
-		<GridImage>
+	imageMappings.map((img, idx) => (
+		<GridImage key={idx}>
 			<ImageSource src={img.image} alt={img.name}></ImageSource>
 			<ImageText>{img.name}</ImageText>
 		</GridImage>
@@ -139,14 +140,16 @@ const About = ({
 				gridContent={gridContent}
 			/>
 			<BottomSection>
-				<Button
-					withShadow
-					blackText
-					bold
-					big
-				>
-					CONTÁCTANOS
+				<Link to="/contact">
+					<Button
+						withShadow
+						blackText
+						bold
+						big
+					>
+						CONTÁCTANOS
 				</Button>
+				</Link>
 			</BottomSection>
 			<Footer />
 		</AboutRoot>

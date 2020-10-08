@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import theme from '../../theme';
 
-const Button = styled.button`
+const buttonStyles = css`
 	font: inherit;
 	cursor: pointer;
 	color: ${theme.colors.white};
@@ -49,4 +49,11 @@ const Button = styled.button`
 	}
 `;
 
-export { Button };
+const Button = styled.button`
+	${buttonStyles}
+`;
+
+export {
+	Button,
+	buttonStyles
+};

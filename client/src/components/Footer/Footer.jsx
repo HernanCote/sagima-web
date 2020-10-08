@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link as RouterLink } from 'react-router-dom';
 
 import { P, Button } from '../Foundation';
 
@@ -106,6 +106,7 @@ const SocialNetworkIcon = styled.img`
 
 const QuickLinks = styled.ul`
 	margin: 0;
+	width: 100%;
 
 	${getMediaMinWidth('sm')} {
 		margin-left: 3rem;
@@ -149,9 +150,11 @@ const Footer = ({
 						<P className="info">Dirección | Teléfono | Email</P>
 					</FooterSection>
 					<FooterSection alignCenter>
-						<Button withShadow blackText>
-							CONTÁCTANOS
-					</Button>
+						<RouterLink to="/contact">
+							<Button withShadow blackText>
+								CONTÁCTANOS
+						</Button>
+						</RouterLink>
 						<P>O visita nuestras redes sociales</P>
 						<SocialNetworkIcon src={LinkedinLogo} alt="Linkedin Sagima" />
 						<P>SAGIMA</P>
@@ -159,17 +162,17 @@ const Footer = ({
 					<FooterSection>
 						<QuickLinks>
 							<LinkItem>
-								<Link to="/about">NOSOTROS</Link>
+								<Link to="/home">NOSOTROS</Link>
 							</LinkItem>
 							<LinkItem>
 								<Link to="/allies">ALIADOS</Link>
 							</LinkItem>
 							<LinkItem>
-								<Link to="/portfolio">PORTAFOLIO</Link>
+								<Link to="/services">SERVICIOS</Link>
 							</LinkItem>
-							<LinkItem>
+							{/* <LinkItem>
 								<Link to="/faq">PREGUNTAS FRECUENTES</Link>
-							</LinkItem>
+							</LinkItem> */}
 						</QuickLinks>
 					</FooterSection>
 				</FooterContent>

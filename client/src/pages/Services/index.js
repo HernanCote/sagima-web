@@ -14,6 +14,7 @@ import BaseGridContent from '../../components/GridContent';
 import InformationCard from '../../components/InformationCard';
 
 import servicesMapping from './servicesMapping';
+import { Link } from 'react-router-dom';
 
 const ServicesRoot = styled.div`
 	background-color: ${theme.colors.white};
@@ -86,9 +87,11 @@ const Services = ({
 				/>
 			</ServicesSection>
 			<BottomSection>
-				<Button withShadow blackText bold big>
-					CONTÁCTANOS
-				</Button>
+				<Link to="/contact">
+					<Button withShadow blackText bold big>
+						CONTÁCTANOS
+					</Button>
+				</Link>
 			</BottomSection>
 			<Footer />
 		</ServicesRoot>
