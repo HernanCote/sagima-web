@@ -87,7 +87,7 @@ const Navbar = ({
 									</NavLink>
 								</ListItem>
 								<ListItem>
-									<NavButton onClick={logout}>CERRAR SESSIÓN</NavButton>
+									<NavButton onClick={logout}>CERRAR SESIÓN</NavButton>
 								</ListItem>
 							</>
 						)}
@@ -104,6 +104,13 @@ const Navbar = ({
 						<MobileNavLink title="services" to="/services">SERVICIOS</MobileNavLink>
 						<MobileNavLink title="allies" to="/allies">ALIADOS</MobileNavLink>
 						<MobileNavLink title="contact" to="/contact">CONTACTO</MobileNavLink>
+						{!token && <MobileNavLink title="login" to="/auth">INICIAR SESIÓN</MobileNavLink>}
+						{token && (
+							<>
+								<MobileNavLink title="projects" to="/projects">PROYECTOS</MobileNavLink>
+								<NavButton onClick={logout}>CERRAR SESSIÓN</NavButton>
+							</>
+						)}
 					</MobileMenu>
 				</MobileNavItems>
 
