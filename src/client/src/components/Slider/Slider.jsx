@@ -35,58 +35,6 @@ const Slider = ({
     const transitionRef = useRef();
     const resizeRef = useRef();
 
-    useEffect(() => {
-        if (!isSingle) {
-            autoPlayRef.current = nextSlide;
-            transitionRef.current = smoothTransition;
-            resizeRef.current = handleResize;
-        }
-    });
-
-    useEffect(() => {
-        if (!isSingle) {
-            const play = () => {
-                autoPlayRef.current();
-            };
-
-            const smooth = e => {
-                transitionRef.current();
-            };
-
-            const resize = () => {
-                resizeRef.current();
-            };
-
-            const transitionEnd = window.addEventListener('transitionend', smooth);
-            const onResize = window.addEventListener('resize', resize);
-
-            let interval = null
-
-            if (autoPlay) {
-                interval = setInterval(play, autoPlay * 1000);
-            }
-
-            return () => {
-                window.removeEventListener('transitionend', transitionEnd);
-                window.removeEventListener('resize', onResize);
-
-                if (autoPlay) {
-                    clearInterval(interval)
-                }
-            };
-        }
-    }, []);
-
-    useEffect(() => {
-        if (transition === 0 && !isSingle) {
-            setState({ ...state, transition: 1 })
-        }
-    }, [transition]);
-
-    const handleResize = () => {
-        setState({ ...state, translate: getWidth(), transition: 0 });
-    };
-
     const smoothTransition = () => {
         let _slides = []
 
@@ -121,6 +69,58 @@ const Slider = ({
             translate: 0,
             activeSlide: activeSlide === 0 ? slides.length - 1 : activeSlide - 1,
         });
+
+    const handleResize = () => {
+        setState({ ...state, translate: getWidth(), transition: 0 });
+    };
+
+    useEffect(() => {
+        if (!isSingle) {
+            autoPlayRef.current = nextSlide;
+            transitionRef.current = smoothTransition;
+            resizeRef.current = handleResize;
+        }
+    }, [isSingle, handleResize, nextSlide, smoothTransition]);
+
+    useEffect(() => {
+        if (!isSingle) {
+            const play = () => {
+                autoPlayRef.current();
+            };
+
+            const smooth = e => {
+                transitionRef.current();
+            };
+
+            const resize = () => {
+                resizeRef.current();
+            };
+
+            const transitionEnd = window.addEventListener('transitionend', smooth);
+            const onResize = window.addEventListener('resize', resize);
+
+            let interval = null
+
+            if (autoPlay) {
+                interval = setInterval(play, autoPlay * 1000);
+            }
+
+            return () => {
+                window.removeEventListener('transitionend', transitionEnd);
+                window.removeEventListener('resize', onResize);
+
+                if (autoPlay) {
+                    clearInterval(interval)
+                }
+            };
+        }
+    }, [isSingle, autoPlay]);
+
+    useEffect(() => {
+        if (transition === 0 && !isSingle) {
+            setState({ ...state, transition: 1 })
+        }
+    }, [transition]);
 
     return (
         <SliderRoot className={className}>
