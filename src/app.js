@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const graphQLHttp = require('express-graphql');
 const mongoose = require('mongoose');
 const path = require('path');
+require('dotenv').config();
 
 const isAuth = require('./middleware/is-auth');
 
