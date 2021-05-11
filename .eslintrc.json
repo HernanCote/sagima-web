@@ -27,17 +27,19 @@
 			1,
 			"single"
 		],
-		"semi": [
-			1,
-			"always"
-        ],
-        "react/jsx-props-no-spreading": 0,
-        "react/react-in-jsx-scope": 0,
-        "react/jsx-one-expression-per-line": 0,
+		"semi": [1,"always"],
+    "consistent-return": "off",
+    "react/no-array-index-key": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "import/prefer-default-export": 0,
 		"arrow-parens": ["warn", "as-needed"],
 		"comma-dangle": ["warn", "always-multiline"],
 		"array-element-newline": ["warn", "consistent"],
 		"react/prop-types": 0,
-		"no-unused-vars": 1
+		"no-unused-vars": 1,
+        "no-shadow": "off",
+        "no-tabs": "off"
     }
 }
