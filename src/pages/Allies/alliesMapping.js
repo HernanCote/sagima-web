@@ -58,7 +58,7 @@ const mappings = [
     width: '10rem',
   },
   {
-    name: 'RAgenzia nazionale per le nuove tecnologie, l´energia e lo sviluppo economico sostenibile ENEA',
+    name: 'Ragenzia nazionale per le nuove tecnologie, l´energia e lo sviluppo economico sostenibile ENEA',
     image: Enea,
     height: '2.75rem',
     width: '10rem',

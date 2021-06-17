@@ -13,12 +13,11 @@ module.exports = {
     services: {
       cms: {
         timeout: 10000,
-        baseUrl: 'https://api.cosmicjs.com/v1/hc-dev-blog/',
+        baseUrl: 'https://api.cosmicjs.com/v2/buckets/sagima-web-production/',
         readKey: process.env.COSMIC_READ_KEY,
         endpoints: {
-          projects: 'objects',
-          project: 'object/:slug',
-          skills: 'objects',
+          about: 'objects/60b906d741c72f000818c6c0',
+          services: 'objects/60cb7658aa078d0009ede4c2',
         },
       },
     },

@@ -1,39 +1,26 @@
-const winston = require('winston');
-const config = require('./config-loader')
+/* eslint-disable no-console */
+function init() {
+  console.log('Initialized logs');
+}
 
-const dev = !config.util.getEnv('NODE_ENV')
-  || ['dev', 'development', 'local'].includes(config.util.getEnv('NODE_ENV'));
-const logger = winston.createLogger({
-  level: dev ? 'debug' : 'info',
-  format: winston.format.combine(
-    dev ? winston.format.colorize() : winston.format.uncolorize(),
-    winston.format.splat(),
-    winston.format.simple(),
-  ),
-  transports: [
-    new winston.transports.Console({
-      stderrLevels: ['error'],
-    }),
-  ],
-});
-
-const info = (...message) => {
-  logger.info(message);
+const info = (...args) => {
+  console.log('INFO: ', ...args);
 };
 
-const log = (...message) => {
-  logger.log(message);
+const log = (...args) => {
+  console.log('LOG:', ...args);
 };
 
-const error = (...message) => {
-  console.error(message);
+const error = (...args) => {
+  console.log('ERROR: ', ...args);
 };
 
-const trace = (...message) => {
-  console.trace(message);
+const trace = (...args) => {
+  console.log('TRACE: ', ...args);
 };
 
 module.exports = {
+  init,
   log,
   info,
   error,

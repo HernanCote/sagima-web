@@ -1,9 +1,5 @@
-import React, {
-  useContext, useState, useRef, useEffect,
-} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import sagimaLogo from '../../static/sagima/sagima.png';
-
-import AuthContext from '../../context/auth-context';
 
 import {
   Root,
@@ -12,7 +8,6 @@ import {
   ItemsList,
   ListItem,
   NavLink,
-  NavButton,
   Bottom,
   MobileNavItems,
   Line,
@@ -22,9 +17,8 @@ import {
 } from './StyledComponents';
 
 const Navbar = ({
-  className, //
+  className,
 }) => {
-  const { token, logout } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const node = useRef();
 
@@ -72,25 +66,6 @@ const Navbar = ({
                 CONTACTO
               </NavLink>
             </ListItem>
-            {!token && (
-            <ListItem>
-              <NavLink title="login" to="/auth">
-                INICIAR SESIÓN
-              </NavLink>
-            </ListItem>
-            )}
-            {token && (
-            <>
-              <ListItem>
-                <NavLink title="projects" to="/projects">
-                  PROYECTOS
-                </NavLink>
-              </ListItem>
-              <ListItem>
-                <NavButton onClick={logout}>CERRAR SESIÓN</NavButton>
-              </ListItem>
-            </>
-            )}
           </ItemsList>
         </DesktopNavItems>
         <MobileNavItems ref={node}>
@@ -104,13 +79,6 @@ const Navbar = ({
             <MobileNavLink title="services" to="/services">SERVICIOS</MobileNavLink>
             <MobileNavLink title="allies" to="/allies">ALIADOS</MobileNavLink>
             <MobileNavLink title="contact" to="/contact">CONTACTO</MobileNavLink>
-            {!token && <MobileNavLink title="login" to="/auth">INICIAR SESIÓN</MobileNavLink>}
-            {token && (
-            <>
-              <MobileNavLink title="projects" to="/projects">PROYECTOS</MobileNavLink>
-              <NavButton onClick={logout}>CERRAR SESSIÓN</NavButton>
-            </>
-            )}
           </MobileMenu>
         </MobileNavItems>
 
