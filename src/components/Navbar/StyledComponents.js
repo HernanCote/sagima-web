@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components/macro';
 import { NavLink as BaseNavLink } from 'react-router-dom';
 
 import { getMediaMinWidth } from '../../utils';
@@ -63,6 +63,7 @@ const commonStyles = css`
 	:active,
 	:hover,
 	&.active {
+    text-decoration: none;
 		color: ${theme.colors.white};
 		background: ${theme.colors.sagimaYellow};
 	}

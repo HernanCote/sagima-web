@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
-
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
-import HeroImage from '../../components/HeroImage';
-import Footer from '../../components/Footer';
-
-import { HTML, Button } from '../../components/Foundation';
-import { BottomSection, Section } from '../About';
 
 import theme from '../../theme';
 
+import { BottomSection, Section } from '../About';
+import { HTML, Button } from '../../components/Foundation';
+
 import BaseGridContent from '../../components/GridContent';
 import InformationCard from '../../components/InformationCard';
+import HeroImage from '../../components/HeroImage';
+import Footer from '../../components/Footer';
 
 import {
   fetchComponentData,

@@ -88,7 +88,7 @@ const Slider = ({
         autoPlayRef.current();
       };
 
-      const smooth = e => {
+      const smooth = () => {
         transitionRef.current();
       };
 

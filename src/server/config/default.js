@@ -18,6 +18,7 @@ module.exports = {
         endpoints: {
           about: 'objects/60b906d741c72f000818c6c0',
           services: 'objects/60cb7658aa078d0009ede4c2',
+          allies: 'objects/60cbad019fc83600082e9e69',
         },
       },
     },

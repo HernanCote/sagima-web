@@ -1,24 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-
-import NhazcaLogo from '../../static/images/allies/nhazca.png';
 
 import BaseGridContent from '../../components/GridContent';
 import Footer from '../../components/Footer';
-import { P } from '../../components/Foundation';
+import { P, HTML } from '../../components/Foundation';
 
-import alliesMapping from './alliesMapping';
-
-import { getMediaMinWidth } from '../../utils';
+import {
+  fetchComponentData,
+  getMediaMinWidth,
+} from '../../utils';
 import theme from '../../theme';
 
 import HeroImage from '../../components/HeroImage';
-
-import ImageHero2 from '../../static/images/BaseHero2.jpg';
-
-const images = [
-  ImageHero2,
-];
 
 const AlliesRoot = styled.div`
 	background-color: ${theme.colors.white};
@@ -87,45 +80,80 @@ const ImageSource = styled.img`
 	width: ${({ width }) => width || '70%'};
 `;
 
-const gridContent = () => alliesMapping.map((img, idx) => (
-  <GridImage key={idx}>
-    <ImageContainer>
-      <ImageSource
-        src={img.image}
-        alt={img.name}
-        height={img.height}
-        width={img.width}
-      />
-    </ImageContainer>
-    <ImageText>{img.name}</ImageText>
-  </GridImage>
-));
-
 const Allies = ({
   className,
-}) => (
-  <AlliesRoot className={className}>
-    <HeroImage images={images} bottomText="ALIADOS" />
-    <Section>
-      <P>
-        NHAZCA (Natural HAZards Control and Assessment), empresa spin-off de la
-        Universidad “Sapienza” de Roma, es líder internacional en el análisis y seguimiento de
-        amenazas naturales y grandes infraestructuras para la gestión y mitigación de riesgos.
-      </P>
-      <P>Somos la empresa aliada de Nhazca en américa latina</P>
-      <DescriptionImage src={NhazcaLogo} alt="Nhazca" />
-      <P>
-        Algunos de los clientes de NHAZCA, nuestra empresa aliada, son:
-      </P>
-    </Section>
-    <GridContent
-      itemsDesktop={3}
-      itemsTablet={2}
-      itemsMobile={1}
-      gridContent={gridContent}
-    />
-    <Footer />
-  </AlliesRoot>
-);
+}) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [topImage, setTopImage] = useState(null);
+  const [descriptionSection, setDescriptionSection] = useState(null);
+  const [allyImageSection, setAllyImageSection] = useState(null);
+  const [complementaryDescriptionSection, setComplementaryDescriptionSection] = useState(null);
+  const [alliesSection, setAlliesSection] = useState([]);
+
+  const fetchPageProps = async () => {
+    const {
+      data: {
+        imageHero,
+        description,
+        allyImage,
+        complementaryDescription,
+        allies,
+      },
+    } = await fetchComponentData({
+      endpoint: 'api/allies',
+      mapper: d => ({ ...d }),
+    });
+
+    setTopImage([imageHero]);
+    setDescriptionSection(description);
+    setAllyImageSection(allyImage);
+    setComplementaryDescriptionSection(complementaryDescription);
+    setAlliesSection(allies);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    fetchPageProps();
+  }, []);
+
+  const gridContent = () => alliesSection.map((img, idx) => (
+    <GridImage key={idx}>
+      <ImageContainer>
+        <ImageSource
+          src={img.image}
+          alt={img.name}
+          height={img.height}
+          width={img.width}
+        />
+      </ImageContainer>
+      <ImageText>{img.name}</ImageText>
+    </GridImage>
+  ));
+
+  return (
+    <>
+      {isLoading && <div>Loading...</div>}
+      {!isLoading && (
+      <AlliesRoot className={className}>
+        {topImage && <HeroImage images={topImage} bottomText="ALIADOS" />}
+        <Section>
+          {descriptionSection && <HTML htmlText={descriptionSection} />}
+          {allyImageSection && <DescriptionImage src={allyImageSection} alt="Nhazca" />}
+          {complementaryDescriptionSection && <HTML htmlText={complementaryDescriptionSection} />}
+        </Section>
+        {alliesSection && alliesSection.length > 0 && (
+        <GridContent
+          itemsDesktop={3}
+          itemsTablet={2}
+          itemsMobile={1}
+          gridContent={gridContent}
+        />
+        )}
+        <Footer />
+      </AlliesRoot>
+      )}
+    </>
+  );
+};
 
 export default Allies;
